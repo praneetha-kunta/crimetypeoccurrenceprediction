@@ -1,0 +1,112 @@
+{% extends 'SProvider/design1.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style10 {color: #FFFF00; font-weight: bold; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div>
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">View Crime Type Prediction Details  !!! </p>
+                            <hr>
+                            <div >
+                               <table border="5" bordercolor="#FF00FF">
+                             <tr><td bgcolor="#FF0000"><span class="style8 style6">INCIDENT_NUMBER</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">OFFENSE_CODE</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">OFFENSE_CODE_GROUP</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">OFFENSE_DESCRIPTION</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">DISTRICT</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">REPORTING_AREA</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">OCCURRED_ON_DATE</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">YEAR</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">MONTH</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">DAY_OF_WEEK</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">Hour</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">UCR_PART</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">STREET</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">Lat</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">Long1</span></td>
+                        <td bgcolor="#FF0000"><span class="style8 style6">Location</span></td>
+                                  <td bgcolor="#FF0000"><span class="style8 style6">Crime Type</span></td>
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.INCIDENT_NUMBER}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.OFFENSE_CODE}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.OFFENSE_CODE_GROUP}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.OFFENSE_DESCRIPTION}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.DISTRICT}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.REPORTING_AREA}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.OCCURRED_ON_DATE}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.YEAR}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.MONTH}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.DAY_OF_WEEK}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Hour}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.UCR_PART}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.STREET}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Lat}}</div></td>
+                        <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Long1}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.Location}}</div></td>
+                    <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{object.CTYPE}}</div></td>
+
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
